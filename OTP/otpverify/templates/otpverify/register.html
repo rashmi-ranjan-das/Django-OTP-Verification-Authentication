@@ -1,0 +1,35 @@
+{% extends 'otpverify/base.html' %}
+
+{% block content %}
+    <div class="container my-4">
+        <div class="text-center">
+            <h1 class="text-primary">Register / Signup</h1>
+        </div>
+        <form method="post" class="my-3" action='{% url "register" %}'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username: </label><br>
+                <input type="text" id="username" name="username" placeholder="Enter Username" required class="form-control">
+            </div><br>
+            <div class="form-group">
+                <label for="email">Email: </label><br>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required class="form-control">
+            </div><br>
+            <div class="form-group">
+                <label for="phone">Phone: </label><br>
+                <input type="number" id="phone" name="phone" placeholder="Enter Phone Number" required class="form-control">
+            </div><br>
+            <div class="form-group">
+                <label for="password1">Enter Password: </label><br>
+                <input type="password" id="password1" name="password1" placeholder="Enter Password" required class="form-control">
+            </div><br>
+            <div class="form-group">
+                <label for="password2">Confirm Password: </label><br>
+                <input type="password" id="password2" name="password2" placeholder="Confirm Password" required class="form-control">
+            </div><br>
+            <div class="text-center my-2">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

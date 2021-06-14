@@ -1,0 +1,24 @@
+{% extends 'otpverify/base.html' %}
+
+{% block content %}
+    <div class="container my-4">
+        <div class="text-center">
+            <h1 class="text-primary">Login / Signin</h1>
+        </div>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="user_email">Enter Email :</label>
+                <input type="email" class="form-control" name="user_email" id="user_email" required>
+            </div><br>
+            <div class="form-group">
+                <label for="password">Enter Password : </label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="text-center my-2">
+                <button type="submit" class="btn btn-success px-3">Login</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+    

@@ -1,0 +1,12 @@
+{% extends 'otpverify/base.html' %}
+
+{% block content %}
+    <div class="container my-3">
+        <h3>Hello, User Welcome !!</h3>
+        {% if user.is_authenticated %}
+            <b>{{user.username}}</b>
+        {% else %}
+            <b>Please login to see username</b>
+        {% endif %}
+    </div>
+{% endblock %}
